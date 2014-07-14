@@ -1,24 +1,24 @@
 {
-  "name": "html2js",
+  "name": "html2jsfile",
   "description": "The best Grunt plugin ever.",
   "version": "0.1.0",
-  "homepage": "https://github.com/liuyang/libs",
+  "homepage": "https://github.com/imbolo/html2jsfile",
   "author": {
-    "name": "liuyang",
+    "name": "liuyangbeta",
     "email": "liuyang@mrcoder.org",
     "url": "http://www.mrcoder.org"
   },
   "repository": {
-    "type": "git",
-    "url": "git://github.com/liuyang/libs.git"
+    "type": "https",
+    "url": "https://github.com/imbolo/html2jsfile.git"
   },
   "bugs": {
-    "url": "https://github.com/liuyang/libs/issues"
+    "url": "https://github.com/imbolo/html2jsfile/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/liuyang/libs/blob/master/LICENSE-MIT"
+      "url": "https://github.com/imbolo/html2jsfile/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
@@ -37,6 +37,9 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "html2js",
+	"package", 
+	"amd",
+	"requirejs"
   ]
 }
