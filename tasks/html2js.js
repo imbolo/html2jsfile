@@ -1,6 +1,6 @@
 /*
  * html2js
- * https://github.com/liuyang/libs
+ * https://github.com/imbolo/html2jsfile
  *
  * Copyright (c) 2014 liuyang
  * Licensed under the MIT license.
@@ -12,7 +12,12 @@ module.exports = function(grunt) {
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
-
+  var template = {
+	  amd:[
+		  "define(function() {\nvar html = {};\n",
+		  "\nreturn html;\n});"
+	  ]
+  };
   grunt.registerMultiTask('html2js', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
@@ -27,7 +32,7 @@ module.exports = function(grunt) {
       var src = "";
 	  
 	  //head
-	  src += "define(function() {\nvar html = {};\n"
+	  src += template["amd"][0];
 	  
 	  //body
 	  src += f.src.filter(function(filepath) {
@@ -42,8 +47,9 @@ module.exports = function(grunt) {
         // Read file source.		
 		// console.log(grunt.file.read(filepath));
 		var result, key, arr,
-			html = grunt.file.read(filepath).replace(/\\s*|\t|\r|\n/g, "");
-			
+			html = grunt.file.read(filepath).replace(/'/g,"\"");
+			html = html.replace(/\\s*|\t|\r|\n/g, "");		
+				
 		key = filepath;
 		arr = key.split("/");
 		key = arr[arr.length - 1];
@@ -54,7 +60,7 @@ module.exports = function(grunt) {
 	  .join(grunt.util.normalizelf(options.separator));
 	  
 	  //foot
-	  src += "\nreturn html;\n});"
+	  src += template["amd"][1];
 	  
 
       // Handle options.
