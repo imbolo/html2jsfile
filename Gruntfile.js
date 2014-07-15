@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 		},
 
 		// Configuration to be run (and then tested).
-		html2js: {
+		html2jsfile: {
 			default_options: {
 				options: {},
 				files: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 
 	// Whenever the "test" task is run, first clean the "tmp" dir, then run this
 	// plugin's task(s), then test the result.
-	grunt.registerTask('test', ['clean', 'html2js', 'nodeunit']);
+	grunt.registerTask('test', ['clean', 'html2jsfile', 'nodeunit']);
 
 	// By default, lint and run all tests.
 	// grunt.registerTask('default', ['jshint', 'test']);
