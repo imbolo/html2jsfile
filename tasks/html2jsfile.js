@@ -1,5 +1,5 @@
 /*
- * html2js
+ * html2jsfile
  * https://github.com/imbolo/html2jsfile
  *
  * Copyright (c) 2014 liuyang
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		  "\nreturn html;\n});"
 	  ]
   };
-  grunt.registerMultiTask('html2js', 'The best Grunt plugin ever.', function() {
+  grunt.registerMultiTask('html2jsfile', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',
